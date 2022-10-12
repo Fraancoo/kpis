@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {Router} from '@angular/router';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  token = localStorage.getItem('auth_token');
+
+  loginData = new FormGroup({
+    email : new FormControl('', [Validators.required,Validators.email]),
+    password : new FormControl('', Validators.required)
+  });
+
+  constructor(private router: Router, private usersService: UsersService) { }
 
   ngOnInit(): void {
+    if (this.token !== null) {
+      this.router.navigate(['/']);
+    }
+  }
+
+  login(form:any) {
+    if (this.loginData.valid) {
+      this.usersService.login(form);
+    }
   }
 
 }

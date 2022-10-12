@@ -1,1 +1,18 @@
-<p>login works!</p>
+<div class="container-fluid">
+    <div class="div-form">
+        <form [formGroup]="loginData" (ngSubmit)="login(loginData.value)">
+            <div class="title">
+                <h2>Welcome!</h2>
+            </div>
+            <div class="mb-3">
+                <input class="form-control" type="email" formControlName="email" placeholder="Email">
+            </div>
+            <div class="mb-3">
+                <input class="form-control" type="password" formControlName="password" placeholder="Password">
+            </div>
+            <div class="mb-3 div-btn">
+                <button type="submit" class="btn btn-primary btn-login">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
