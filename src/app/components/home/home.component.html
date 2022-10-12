@@ -1,1 +1,15 @@
-<p>home works!</p>
+<div class="container-fluid">
+    <div class="header">
+        <button class="btn btn-outline-primary" (click)="logOut()">Log out</button>
+    </div>
+    <hr>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <p id="managerial" class="nav-link" routerLink="managerial">Managerial Dashboard</p>
+        </li>
+        <li class="nav-item">
+            <p id="team-member" class="nav-link" routerLink="team-member">Team Member Dashboard</p>
+        </li>
+    </ul>
+    <router-outlet></router-outlet>
+</div>

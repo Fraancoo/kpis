@@ -1,0 +1,49 @@
+@media (max-width: 479px) {
+    .monthly-sales-chart {
+        margin-top: 15px;
+        width: 100%;
+        display: block;
+        overflow: auto;
+        white-space: nowrap;
+    }
+}
+
+@media (min-width: 480px) {
+    .monthly-sales-chart {
+        width: 500px;
+        margin: 15px;
+    }
+}
+
+h1 {
+    font: 24px sans-serif;
+}
+
+.monthly-sales-chart {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #dadada;
+    background-color: #d7f8ff;
+}
+
+.bar {
+    fill: #d81c3f;
+}
+  
+.bar:hover {
+    fill: darkgray;
+}
+  
+.axis {
+    font: 10px sans-serif;
+}
+  
+.axis path, .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+  
+.x.axis path {
+    display: none;
+}

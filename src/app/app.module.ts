@@ -8,12 +8,16 @@ import { HomeComponent } from './components/home/home.component';
 
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
+import { DashManagerialComponent } from './components/dash-managerial/dash-managerial.component';
+import { DashTeamMemberComponent } from './components/dash-team-member/dash-team-member.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    DashManagerialComponent,
+    DashTeamMemberComponent
   ],
   imports: [
     BrowserModule,
