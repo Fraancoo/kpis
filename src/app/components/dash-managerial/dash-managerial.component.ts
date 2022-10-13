@@ -28,8 +28,8 @@ export class DashManagerialComponent implements OnInit {
         let months = document.getElementById('months');
         let total = (this.monthlySale[i].total*350)/1000000
         let rect = this.getNode('rect', {x:(10+(i*34)), width:31, y:350-total, height:total});
+        // <rect class="bar" x="10" width="31" y="250" height="100"></rect>
         months?.appendChild(rect);
-        
       }
     });
   }
