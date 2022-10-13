@@ -1,5 +1,5 @@
-<div class="container-fluid">
-	<div class="monthly-sales-chart">
+<div class="container-fluid row">
+	<div class="monthly-sales-chart col-6">
 		<h1>Monthly Sales</h1>
 		<svg width="470" height="410">
 			<g transform="translate(50,20)">
@@ -89,19 +89,53 @@
 					</g>
 					<text transform="rotate(-90)" y="-40" dy=".71em" style="text-anchor: end;">Total Sales</text>
 				</g>
-				<rect class="bar" x="10" width="31" y="250" height="100"></rect>
-				<rect class="bar" x="44" width="31" y="150" height="200"></rect>
-				<rect class="bar" x="78" width="31" y="300" height="50"></rect>
-				<rect class="bar" x="112" width="31" y="50" height="300"></rect>
-				<rect class="bar" x="146" width="31" y="0" height="350"></rect>
-				<rect class="bar" x="180" width="31" y="100" height="250"></rect>
-				<rect class="bar" x="214" width="31" y="50" height="300"></rect>
-				<rect class="bar" x="248" width="31" y="300" height="50"></rect>
-				<rect class="bar" x="282" width="31" y="250" height="100"></rect>
-				<rect class="bar" x="316" width="31" y="200" height="150"></rect>
-				<rect class="bar" x="350" width="31" y="0" height="350"></rect>
-				<rect class="bar" x="384" width="31" y="300" height="50"></rect>
+				<g id="months">
+				</g>
+				<!-- <rect class="bar" x="10" width="31" y="250" height="100"></rect> -->
 			</g>
 		</svg>
+	</div>
+	<div class="products-services-charts col-6">
+		<form class="row" [formGroup]="salesPerMonthValues">
+			<select class="form-select col" formControlName="option" (change)="salesPerMonth()">
+				<option [value]="'products'">Products</option>
+				<option [value]="'services'">Services</option>
+			</select>
+			<select class="form-select col" formControlName="month" (change)="salesPerMonth()">
+				<option [value]="'1'">January</option>
+				<option [value]="'2'">February</option>
+				<option [value]="'3'">March</option>
+				<option [value]="'4'">April</option>
+				<option [value]="'5'">May</option>
+				<option [value]="'6'">June</option>
+				<option [value]="'7'">July</option>
+				<option [value]="'8'">August</option>
+				<option [value]="'9'">September</option>
+				<option [value]="'10'">October</option>
+				<option [value]="'11'">November</option>
+				<option [value]="'12'">December</option>
+			</select>
+		</form>
+		<br>
+		<div style="width: 100%; text-align: center;">
+			<svg id="pie-products" class="pie" height="200" width="200" viewBox="0 0 20 20">
+				<circle r="10" cx="10" cy="10" fill="transparent"/>
+				<!-- <circle r="8" cx="10" cy="10" fill="transparent"
+						class="percentage"
+						stroke="tomato"
+						stroke-width="4"
+						stroke-dasharray="calc(75 * 50.24 / 100) 50.24"
+						transform="rotate(-90) translate(-20)" /> -->
+			</svg>
+			<svg id="pie-services" class="pie" height="200" width="200" viewBox="0 0 20 20">
+				<circle r="10" cx="10" cy="10" fill="transparent"/>
+				<!-- <circle r="8" cx="10" cy="10" fill="transparent"
+						class="percentage"
+						stroke="bisque"
+						stroke-width="4"
+						stroke-dasharray="calc(75 * 50.24 / 100) 50.24"
+						transform="rotate(-90) translate(-20)" /> -->
+			</svg>
+		</div>
 	</div>
 </div>

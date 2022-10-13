@@ -6,11 +6,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SalesService {
 
-  url = 'https://frontend-exercise.herokuapp.com/sales';
+  url = '/sales';
 
   constructor(private http: HttpClient) { }
 
   getSales2022(){
     return this.http.get(this.url+'?year=2022');
+  }
+  
+  getSalesPerMonth(month:any) {
+    return this.http.get(this.url+'?year=2022?&month='+month);
   }
 }

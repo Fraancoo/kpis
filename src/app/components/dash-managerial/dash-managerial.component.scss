@@ -1,5 +1,13 @@
-@media (max-width: 479px) {
+@media (max-width: 540px) {
     .monthly-sales-chart {
+        margin-top: 15px;
+        width: 100%;
+        display: block;
+        overflow: auto;
+        white-space: nowrap;
+    }
+
+    .products-services-charts {
         margin-top: 15px;
         width: 100%;
         display: block;
@@ -13,6 +21,11 @@
         width: 500px;
         margin: 15px;
     }
+    
+    .products-services-charts {
+        width: 500px;
+        margin: 15px;
+    }
 }
 
 h1 {
@@ -23,16 +36,36 @@ h1 {
     padding: 5px;
     border-radius: 5px;
     border: 1px solid #dadada;
-    background-color: #d7f8ff;
+    background-color: #E3F2FD;
 }
 
-.bar {
+.products-services-charts {
+    padding: 25px;
+    border-radius: 5px;
+    border: 1px solid #dadada;
+    background-color: #E3F2FD;
+}
+
+.pie {
+    margin: 75px 10px 0px 10px;
+}
+
+#months {
     fill: #d81c3f;
 }
+
+@keyframes dash {
+    from {
+      stroke-dashoffset: 822;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
   
-.bar:hover {
-    fill: darkgray;
-}
+// #months:hover {
+//     fill: darkgray;
+// }
   
 .axis {
     font: 10px sans-serif;

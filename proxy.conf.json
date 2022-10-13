@@ -1,0 +1,7 @@
+{ 
+    "/sales": {
+        "target": "https://frontend-exercise.herokuapp.com/",
+        "secure": true,
+        "changeOrigin":true
+    }
+}
