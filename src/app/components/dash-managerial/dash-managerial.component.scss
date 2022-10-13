@@ -1,82 +1,42 @@
 @media (max-width: 540px) {
-    .monthly-sales-chart {
-        margin-top: 15px;
-        width: 100%;
-        display: block;
-        overflow: auto;
-        white-space: nowrap;
-    }
-
-    .products-services-charts {
-        margin-top: 15px;
-        width: 100%;
-        display: block;
-        overflow: auto;
-        white-space: nowrap;
+    .monthlySales, .salesPerMonth {
+        height:300px !important;
+        margin-top: 20px;
     }
 }
 
 @media (min-width: 480px) {
-    .monthly-sales-chart {
-        width: 500px;
-        margin: 15px;
-    }
-    
-    .products-services-charts {
-        width: 500px;
-        margin: 15px;
+    .monthlySales, .salesPerMonth {
+        height:400px !important;
+        margin-top: 20px;
     }
 }
 
-h1 {
-    font: 24px sans-serif;
+.title {
+    font-size: 20pt;
 }
 
-.monthly-sales-chart {
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #dadada;
-    background-color: #E3F2FD;
-}
-
-.products-services-charts {
+.monthly-sales-div {
+    width: 100%;
+    margin-top: 15px;
     padding: 25px;
     border-radius: 5px;
     border: 1px solid #dadada;
-    background-color: #E3F2FD;
 }
 
-.pie {
-    margin: 75px 10px 0px 10px;
+.monthlySales, .salesPerMonth {
+    margin-top: 20px;
 }
 
-#months {
-    fill: #d81c3f;
+.products-services-div {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 25px;
+    border-radius: 5px;
+    border: 1px solid #dadada;
 }
 
-@keyframes dash {
-    from {
-      stroke-dashoffset: 822;
-    }
-    to {
-      stroke-dashoffset: 0;
-    }
-  }
-  
-// #months:hover {
-//     fill: darkgray;
-// }
-  
-.axis {
-    font: 10px sans-serif;
-}
-  
-.axis path, .axis line {
-    fill: none;
-    stroke: #000;
-    shape-rendering: crispEdges;
-}
-  
-.x.axis path {
-    display: none;
+.form-select {
+    margin: 0px 5px 0px 5px;
 }
