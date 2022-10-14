@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({extended:false}));
 
 //---------- API Routes ----------
 app.use('/users', require('./routes/users'));
-app.use('/kpi', require('./routes/kpi'));
+app.use('/kpis', require('./routes/kpis'));
 
 // server
 app.listen(app.get('port'), ()=> {

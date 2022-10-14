@@ -6,8 +6,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class KpisService {
 
-  // url = 'http://localhost:3080/kpis';
-  url = '/api/kpis';
+  url = 'http://localhost:3080/kpis';
+  // url = '/api/kpis';
 
   constructor(private http: HttpClient) { }
 

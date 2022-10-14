@@ -1,12 +1,12 @@
 @media (max-width: 540px) {
-    .monthlySales {
+    .kpiChart {
         height:300px !important;
         margin-top: 20px;
     }
 }
 
 @media (min-width: 480px) {
-    .monthlySales {
+    .kpiChart {
         height:400px !important;
         margin-top: 20px;
     }
@@ -25,6 +25,14 @@
     border: 1px solid #dadada;
 }
 
-.monthlySales{
+.kpiChart{
     margin-top: 20px;
+}
+
+.kpiDivDanger {
+    background-color: #FFCDD2;
+}
+
+.kpiDivSuccess {
+    background-color: #C8E6C9;
 }
