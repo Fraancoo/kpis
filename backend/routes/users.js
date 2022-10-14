@@ -15,6 +15,16 @@ const users = [{
     type: 1
 }];
 
+function verify_user_data(email) {
+    let user_data = null
+    for (let i = 0; i < users.length; i++) {
+        if (email === users[i].email) {
+            user_data = users[i];
+        }
+    }
+    return user_data;
+}
+
 //Get users
 router.get('/',(req, res)=>{
     if (users.length > 0) {
@@ -51,12 +61,18 @@ router.get('/:id',(req, res)=>{
 //Login
 router.post('/login',(req, res)=>{
     const user =  req;
-    if (user.email === users.email) {
-        if (user.password === users.password) {
+    const user_data = verify_user_data(user.body.email);
+    if (user_data !== null) {
+        if (user_data.password === user.body.password) {
             res.json({
                 status: 1,
                 message: 'Login successfully',
-                token: 'token12345'
+                token: 'token'+user_data.id+user_data.type
+            });
+        } else {
+            res.json({
+                status: 0,
+                message: 'Error, email or password are not correct'
             });
         }
     } else {

@@ -3,7 +3,7 @@
         <button class="btn btn-outline-primary" (click)="logOut()">Log out</button>
     </div>
     <hr>
-    <ul class="nav nav-tabs">
+    <ul class="nav nav-tabs" *ngIf="token == '0'">
         <li class="nav-item">
             <p id="managerial" class="nav-link" routerLink="managerial">Managerial Dashboard</p>
         </li>

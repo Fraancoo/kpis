@@ -9,9 +9,8 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:false}));
 
 //---------- API Routes ----------
-app.use('/api/users', require('./routes/users'));
-// app.use('/api/sales', require('./routes/sales'));
-// app.use('/api/kpi', require('./routes/kpi'));
+app.use('/users', require('./routes/users'));
+app.use('/kpi', require('./routes/kpi'));
 
 // server
 app.listen(app.get('port'), ()=> {

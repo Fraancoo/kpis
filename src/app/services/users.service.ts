@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UsersService {
 
-  url = 'http://localhost:3080/api/users';
+  url = 'http://localhost:3080/users';
 
   constructor(private http: HttpClient) { }
 
@@ -16,7 +16,6 @@ export class UsersService {
       password: form.password
     }).subscribe((res:any) => {
       if (res.status === 1) {
-        localStorage.setItem('user_id', res.id);
         localStorage.setItem('auth_token', res.token);
         window.location.reload();
       }

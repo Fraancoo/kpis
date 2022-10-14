@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Chart, registerables } from 'chart.js';
 Chart.register(...registerables);
 import { SalesService } from 'src/app/services/sales.service';
@@ -11,19 +12,12 @@ import { SalesService } from 'src/app/services/sales.service';
 })
 export class DashManagerialComponent implements OnInit {
 
+  token = localStorage.getItem('auth_token')?.substring(6);
+
   mSales: any;
   salesPM: any;
 
-  // salesPerMonthChart = new Chart('salesPerMonth', {
-  //   type: 'doughnut',
-  //       data: {
-  //         datasets: [{
-  //           data: []
-  //         }]
-  //       }
-  // });
-
-  constructor(private salesService: SalesService) { }
+  constructor(private router: Router, private salesService: SalesService) { }
 
   salesPerMonthValues = new FormGroup({
     option: new FormControl('', Validators.required),
@@ -31,9 +25,13 @@ export class DashManagerialComponent implements OnInit {
   });
 
   ngOnInit(): void {
+
+    if (this.token != '0') {
+      this.router.navigate(['/team-member']);
+    }
+
     this.salesService.getSales2022().subscribe(res => {
       this.mSales = res;
-      console.log(this.mSales);
 
       let monthlySalesChart = new Chart('monthlySales', {
         type: 'bar',

@@ -1,7 +1,10 @@
 { 
-    "/sales": {
+    "/api": {
         "target": "https://frontend-exercise.herokuapp.com/",
         "secure": true,
-        "changeOrigin":true
+        "changeOrigin":true,
+        "pathRewrite": {
+            "^/api": ""
+          }
     }
 }

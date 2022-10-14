@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SalesService {
 
-  url = '/sales';
+  url = '/api/sales';
 
   constructor(private http: HttpClient) { }
 
