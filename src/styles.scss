@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+
+.container-fluid {
+    background: rgb(255,255,255);
+    background: linear-gradient(360deg, rgba(255,255,255,1) 0%, rgba(225,245,254,1) 100%);
+}
